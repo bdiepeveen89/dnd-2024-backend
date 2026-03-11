@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # D&D 2024 Backend — Docker + Python + MySQL
 
 ## Vereisten
@@ -67,6 +66,7 @@ dnd-backend/
 docker compose down        # stop containers, data blijft bewaard
 docker compose down -v     # stop + verwijder alle data (reset)
 ```
+
 =======
 # DnD2024-App
 DnD Character creation and DM tool
