@@ -70,4 +70,3 @@ docker compose down -v     # stop + verwijder alle data (reset)
 =======
 # DnD2024-App
 DnD Character creation and DM tool
->>>>>>> 92a13453975aadcfc14621236a38b2b99dd07c30
