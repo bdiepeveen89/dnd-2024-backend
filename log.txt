@@ -1,0 +1,195 @@
+dnd_nginx  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+dnd_nginx  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+dnd_nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+dnd_nginx  | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+dnd_nginx  | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+dnd_nginx  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+dnd_nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+dnd_nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+dnd_nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
+dnd_api    | INFO:     Will watch for changes in these directories: ['/app']
+dnd_api    | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+dnd_api    | INFO:     Started reloader process [1] using WatchFiles
+dnd_db     | 2026-03-08T21:21:34.353414Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.3.0)  MySQL Community Server - GPL.
+dnd_db     | 2026-03-08T21:21:34.353445Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+dnd_api    | Process SpawnProcess-1:
+dnd_api    | Traceback (most recent call last):
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/pymysql/connections.py", line 649, in connect
+dnd_api    |     sock = socket.create_connection(
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/socket.py", line 865, in create_connection
+dnd_api    |     raise exceptions[0]
+dnd_api    |   File "/usr/local/lib/python3.12/socket.py", line 850, in create_connection
+dnd_db     | 2026-03-08 21:21:34+00:00 [Note] [Entrypoint]: Temporary server stopped
+dnd_api    |     sock.connect(sa)
+dnd_db     |
+dnd_api    | ConnectionRefusedError: [Errno 111] Connection refused
+dnd_db     | 2026-03-08 21:21:34+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+dnd_api    |
+dnd_db     |
+dnd_api    | During handling of the above exception, another exception occurred:
+dnd_api    |
+dnd_api    | Traceback (most recent call last):
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+dnd_api    |     self._dbapi_connection = engine.raw_connection()
+dnd_api    |                              ^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+dnd_api    |     return self.pool.connect()
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+dnd_api    |     return _ConnectionFairy._checkout(self)
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+dnd_api    |     fairy = _ConnectionRecord.checkout(pool)
+dnd_api    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+dnd_api    |     rec = pool._do_get()
+dnd_api    |           ^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+dnd_api    |     with util.safe_reraise():
+dnd_api    |          ^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+dnd_api    |     raise exc_value.with_traceback(exc_tb)
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+dnd_api    |     return self._create_connection()
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+dnd_api    |     return _ConnectionRecord(self)
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+dnd_api    |     self.__connect()
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+dnd_api    |     with util.safe_reraise():
+dnd_api    |          ^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+dnd_api    |     raise exc_value.with_traceback(exc_tb)
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+dnd_db     | 2026-03-08T21:21:34.489312Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+dnd_api    |     self.dbapi_connection = connection = pool._invoke_creator(self)
+dnd_db     | 2026-03-08T21:21:34.650077Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.3.0) starting as process 1
+dnd_api    |                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_db     | 2026-03-08T21:21:34.655161Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+dnd_api    |     return dialect.connect(*cargs, **cparams)
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+dnd_api    |     return self.loaded_dbapi.connect(*cargs, **cparams)
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+dnd_api    |     self.connect()
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/pymysql/connections.py", line 716, in connect
+dnd_api    |     raise exc
+dnd_api    | pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'db' ([Errno 111] Connection refused)")
+dnd_api    |
+dnd_api    | The above exception was the direct cause of the following exception:
+dnd_api    |
+dnd_api    | Traceback (most recent call last):
+dnd_api    |   File "/usr/local/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+dnd_api    |     self.run()
+dnd_api    |   File "/usr/local/lib/python3.12/multiprocessing/process.py", line 108, in run
+dnd_api    |     self._target(*self._args, **self._kwargs)
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+dnd_api    |     target(sockets=sockets)
+dnd_db     | 2026-03-08T21:21:34.752660Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+dnd_api    |     return asyncio.run(self.serve(sockets=sockets))
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/asyncio/runners.py", line 195, in run
+dnd_api    |     return runner.run(main)
+dnd_api    |            ^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+dnd_api    |     return self._loop.run_until_complete(task)
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+dnd_api    |     await self._serve(sockets)
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+dnd_api    |     config.load()
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+dnd_api    |     self.loaded_app = import_from_string(self.app)
+dnd_api    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+dnd_api    |     module = importlib.import_module(module_str)
+dnd_api    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+dnd_api    |     return _bootstrap._gcd_import(name[level:], package, level)
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+dnd_api    |   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+dnd_api    |   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+dnd_api    |   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+dnd_api    |   File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+dnd_api    |   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+dnd_api    |   File "/app/main.py", line 41, in <module>
+dnd_api    |     Base.metadata.create_all(bind=engine)
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+dnd_api    |     bind._run_ddl_visitor(
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+dnd_api    |     with self.begin() as conn:
+dnd_api    |          ^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/contextlib.py", line 137, in __enter__
+dnd_api    |     return next(self.gen)
+dnd_api    |            ^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+dnd_api    |     with self.connect() as conn:
+dnd_api    |          ^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+dnd_api    |     return self._connection_cls(self)
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+dnd_api    |     Connection._handle_dbapi_exception_noconnection(
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+dnd_api    |     raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+dnd_db     | 2026-03-08T21:21:34.946909Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+dnd_api    |     self._dbapi_connection = engine.raw_connection()
+dnd_db     | 2026-03-08T21:21:34.946949Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+dnd_api    |                              ^^^^^^^^^^^^^^^^^^^^^^^
+dnd_db     | 2026-03-08T21:21:34.951144Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+dnd_db     | 2026-03-08T21:21:34.963889Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+dnd_api    |     return self.pool.connect()
+dnd_db     | 2026-03-08T21:21:34.964014Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.3.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+dnd_api    |     return _ConnectionFairy._checkout(self)
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+dnd_api    |     fairy = _ConnectionRecord.checkout(pool)
+dnd_api    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+dnd_api    |     rec = pool._do_get()
+dnd_api    |           ^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+dnd_api    |     with util.safe_reraise():
+dnd_api    |          ^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+dnd_api    |     raise exc_value.with_traceback(exc_tb)
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+dnd_api    |     return self._create_connection()
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+dnd_api    |     return _ConnectionRecord(self)
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+dnd_api    |     self.__connect()
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+dnd_api    |     with util.safe_reraise():
+dnd_api    |          ^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+dnd_api    |     raise exc_value.with_traceback(exc_tb)
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+dnd_api    |     self.dbapi_connection = connection = pool._invoke_creator(self)
+dnd_api    |                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+dnd_api    |     return dialect.connect(*cargs, **cparams)
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+dnd_api    |     return self.loaded_dbapi.connect(*cargs, **cparams)
+dnd_api    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/pymysql/connections.py", line 361, in __init__
+dnd_api    |     self.connect()
+dnd_api    |   File "/usr/local/lib/python3.12/site-packages/pymysql/connections.py", line 716, in connect
+dnd_api    |     raise exc
+dnd_api    | sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'db' ([Errno 111] Connection refused)")
+dnd_api    | (Background on this error at: https://sqlalche.me/e/20/e3q8)
